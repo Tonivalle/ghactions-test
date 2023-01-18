@@ -4,23 +4,21 @@ on:
   push:
     branches:
       - main
-    
   pull_request:
     branches:
       - main
-
   workflow_dispatch:
 
 jobs:
   hello:
-    runs_on: ubuntu_latest
+    runs_on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: hello!
         run: echo "Hello World"
         shell: bash
   goodbye:
-    runs_on: ubuntu_latest
+    runs_on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: goodbye!

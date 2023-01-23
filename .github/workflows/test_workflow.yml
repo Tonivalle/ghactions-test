@@ -13,14 +13,26 @@ jobs:
   hello:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: hello!
         run: echo "Hello World"
         shell: bash
   goodbye:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: goodbye!
         run: echo "Sayonara my man"
         shell: bash
+  format-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4 
+        with:
+          python-version: '3.9.5'
+      - name: Install Poetry
+        uses: snok/install-poetry@v1
+      - run: poetry install
+      - name: format
+        run: make format-check

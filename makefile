@@ -21,7 +21,7 @@ type-check: ## Launch the type checking tool
 	poetry run mypy --ignore-missing-imports $(CHECK_DIRS)
 
 test: ## Launch the tests
-	poetry run pytest -vv -n auto tests
+	poetry run pytest tests
 
 update: ## Update python dependencies
 	poetry update -vvv
